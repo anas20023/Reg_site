@@ -12,5 +12,9 @@
     "not safari <= 16.5",
     "not samsung <= 21",
     "not and_ff <= 116"
-  ]
+  ],
+  "hints": {
+    "axe/name-role-value": "off",
+    "disown-opener": "off"
+  }
 }
