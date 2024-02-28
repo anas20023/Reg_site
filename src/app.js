@@ -12,7 +12,7 @@ info_form.addEventListener("submit", (e) => {
   phone = info_form.phn_nmbr.value;
   id = info_form.st_id.value;
   section = info_form.st_sec.value;
-  const data = {
+   var data = {
     namee,
     email,
     phone,
@@ -29,7 +29,6 @@ info_form.addEventListener("submit", (e) => {
       alrt_sc.classList.add("hidden");
       alrt_sc.classList.remove("flex");
       location.href = "payment.html";
-      console.log(data);
     }, 3000);
   } else {
     alert("Please Fill All The Fields");
@@ -46,3 +45,8 @@ function noBack() {
 //   location.href = "index.html";
 //   info_form.reset();
 // }
+///-----------------------------------------------------------------
+///-----------------------------------------------------------------
+/// Payment Tab All Works
+///-----------------------------------------------------------------
+///-----------------------------------------------------------------

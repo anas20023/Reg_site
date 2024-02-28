@@ -3,5 +3,9 @@
     "tailwindcss": "^3.4.1"
   },
   "scripts": {
-    "build": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch"}
+    "build": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch"
+  },
+  "dependencies": {
+    "mongodb": "^6.3.0"
+  }
 }

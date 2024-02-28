@@ -5,6 +5,15 @@ const cash_payment = document.querySelector("#ref_div_show");
 const online_payment = document.querySelector("#tr_id_div_show");
 const bkash = document.querySelector("#bksh_nm_div_show");
 const nagad = document.querySelector("#Nagad_nmbr_div");
+const contact_Section = document.querySelector("#contact_section");
+//------------------------------------------------------------
+const confirm_pmnt = document.querySelector("#confirm_btn");
+const ref_nmbr = document.querySelector("#ref_name");
+const tr_nmbr = document.querySelector("#tr_id");
+const bk_nmbr = document.querySelector("#bksh_nmr");
+const ng_nmbr = document.querySelector("#Nagad_number");
+const payment_mthd = document.querySelector("#payment-method");
+//------------------------------------------------------------
 payment_type.addEventListener("change", () => {
   let method = payment_type.value;
   if (method == 1) {
@@ -36,24 +45,40 @@ payment_type.addEventListener("change", () => {
     nagad.classList.add("flex");
   }
 });
-paymet_form.addEventListener("submit", (evt) => {
-  evt.preventDefault();
-  evt.stopPropagation();
-  bk = paymet_form.bksh_nmr.value;
-  ng = paymet_form.Nagad_number.value;
-  tr = paymet_form.tr_id.value;
-  ref_nm = paymet_form.ref_name.value;
-  data = {
-    bk,
-    ng,
-    tr,
-    ref_nm,
-  };
-  if (data.length != 0) {
-    paymet_form.reset();
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
+confirm_pmnt.addEventListener("click", () => {
+  if (payment_mthd.value == 2) {
+    console.log("BKash");
+    console.log(bk_nmbr.value);
+    console.log(tr_nmbr.value);
+    bk_nmbr.value = "";
+    tr_nmbr.value = "";
+    payment_mthd.value = 0;
+    paymet_form.classList.add("hidden");
+    paymet_form.classList.remove("flex");
     payment_alt.classList.remove("hidden");
-    console.log(data);
+    contact_Section.classList.remove("hidden");
+    contact_Section.classList.add("flex");
+  } else if (payment_mthd.value == 3) {
+    console.log("Nagad");
+    console.log(ng_nmbr.value);
+    console.log(tr_nmbr.value);
+    ng_nmbr.value = "";
+    tr_nmbr.value = "";
+    payment_mthd.value = 0;
+    paymet_form.classList.add("hidden");
+    paymet_form.classList.remove("flex");
+    payment_alt.classList.remove("hidden");
+    contact_Section.classList.remove("hidden");
+    contact_Section.classList.add("flex");
+  } else if (payment_mthd.value == 1) {
+    console.log("Cash");
+    console.log(ref_nmbr.value);
+    ref_nmbr.value = "";
+    payment_mthd.value = 0;
+    paymet_form.classList.add("hidden");
+    paymet_form.classList.remove("flex");
+    payment_alt.classList.remove("hidden");
+    contact_Section.classList.remove("hidden");
+    contact_Section.classList.add("flex");
   }
 });
