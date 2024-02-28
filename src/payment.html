@@ -17,7 +17,11 @@
     <link rel="stylesheet" href="./output.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="font-[poppins]" onLoad="noBack();" onpageshow="if (event.persisted) noBack();" onUnload="">
+  <body
+    class="font-[poppins]"
+    onLoad="noBack();"
+    onpageshow="if (event.persisted) noBack();"
+    onUnload="">
     <!-- Navigation Bar Section -->
     <section
       class="flex flex-row justify-center items-center h-20 w-4/5 max-w-7xl mx-auto">
@@ -25,15 +29,52 @@
         <h2 class="text-2xl text-slate-800 font-bold">
           Remain <span class="text-[30px] text-blue-600">52</span>
         </h2>
-        <h4 class="text-md cursor-pointer">
-          Check Status
-          <i
-            class="fa-solid fa-user text-slate-800 text-lg cursor-pointer ml-4"></i>
+        <h4 class="text-base font-semibold text-slate-800">
+          <span class="hidden lg:inline-block">Bkash/Nagad :</span>01722222222
         </h4>
       </nav>
     </section>
     <!-- Navigation Bar Section -->
-    
+    <div
+      id="alert-to-sent-mail"
+      class="hidden px-11 lg:px-[150px] py-4 mb-4 text-green-800 border-t border-b border-green-300 bg-green-50"
+      role="alert">
+      <div class="flex items-center">
+        <i class="fa-solid fa-paper-plane text-2xl mr-3"></i>
+        <span class="sr-only">Info</span>
+        <h3 class="text-lg font-medium">You will get an Email Shortly</h3>
+      </div>
+      <div class="mt-2 mb-4 text-sm">
+        Please wait a while.
+        <span class="font-bold">We will confirm your Registration Soon.</span>
+        For more details about
+        <span class="font-bold">IIPC-52 Contest, Visit Our Facebook Page.</span>
+      </div>
+      <div class="flex">
+        <button
+          type="button"
+          class="text-white bg-green-800 hover:bg-green-900 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-xs px-3 py-1.5 me-2 text-center inline-flex items-center">
+          <svg
+            class="me-2 h-3 w-3"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 20 14">
+            <path
+              d="M10 0C4.612 0 0 5.336 0 7c0 1.742 3.546 7 10 7 6.454 0 10-5.258 10-7 0-1.664-4.612-7-10-7Zm0 10a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z" />
+          </svg>
+          Visit Page
+        </button>
+        <button
+          type="button"
+          class="text-green-800 bg-transparent border border-green-800 hover:bg-green-900 hover:text-white focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-xs px-3 py-1.5 text-center"
+          data-dismiss-target="#alert-additional-content-3"
+          aria-label="Close">
+          Exit
+        </button>
+      </div>
+    </div>
+
     <!-- Form Section -->
     <section class="h-auto w-4/5 max-w-7xl mx-auto mt-10">
       <h1
@@ -44,66 +85,158 @@
         class="text-center text-base lg:text-lg text-slate-800 font-medium mt-6">
         Proceed to Payment
       </p>
-      <form class="w-full max-w-lg mx-auto my-20">
-        <!-- Name -->
+      <form
+        class="w-full max-w-lg mx-auto my-20"
+        id="paymentForm"
+        name="paymentForm">
         <div class="flex flex-wrap -mx-3 mb-6">
-          <div class="w-full  px-3 mb-6 md:mb-0">
-            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
-              Full Name
+          <div class="w-full px-3 mb-6 md:mb-0">
+            <label
+              class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+              for="grid-first-name">
+              Select Payment Method
             </label>
-            <input class="appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="fullname" type="text" placeholder="Fullname" required>
-          </div>    
-        </div>
-        <!-- Name -->
-        <!-- Email -->
-        <div class="flex flex-wrap -mx-3 mb-6">
-          <div class="w-full px-3">
-            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
-              Email
-            </label>
-            <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="email" type="email" placeholder="Email" required>
+            <select
+              class="appearance-none block w-full bg-gray-100 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+              id="payment-method"
+              type="text"
+              required
+              data-te-select-init
+              data-te-select-clear-button="true"
+              title="Select Payment Method">
+              <option class="optn_picker" value="0" selected>
+                Select Payment Method
+              </option>
+              <option class="optn_picker" value="1">Cash</option>
+              <option class="optn_picker" value="2">Bkash</option>
+              <option class="optn_picker" value="3">Nagad</option>
+            </select>
           </div>
         </div>
-          <button
-    class=" mx-auto flex items-center gap-2 px-6 py-3  text-sm font-bold text-center bg-blue-500 text-white uppercase align-middle transition-all rounded-sm select-none disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none"
-    type="submit">
-    Next
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
-      class="w-5 h-5">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"></path>
-    </svg>
-  </button>
+        <!-- Ref_name -->
+        <div id="ref_div_show" class="hidden flex-wrap -mx-3 mb-6">
+          <div class="w-full px-3">
+            <label
+              class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+              Reference
+            </label>
+            <input
+              class="appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              id="ref_name"
+              type="text"
+              placeholder="Reference"
+              required />
+          </div>
+        </div>
+        <!-- Ref_name -->
+        <!-- Bkash_nmbr -->
+        <div id="bksh_nm_div_show" class="hidden flex-wrap -mx-3 mb-6">
+          <div class="w-full px-3">
+            <label
+              class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+              Bkash Number
+            </label>
+            <input
+              class="appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              id="bksh_nmr"
+              type="text"
+              placeholder="Bkash Number"
+              required />
+          </div>
+        </div>
+        <!-- Bkash_nmbr -->
+        <!-- Nagad_nmbr -->
+        <div id="Nagad_nmbr_div" class="hidden flex-wrap -mx-3 mb-6">
+          <div class="w-full px-3">
+            <label
+              class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+              Nagad Number
+            </label>
+            <input
+              class="appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              id="Nagad_number"
+              type="text"
+              placeholder="Nagad Number"
+              required />
+          </div>
+        </div>
+        <!-- Nagad_nmbr -->
+        <!-- Bkash/Nagad_tr_id -->
+        <div id="tr_id_div_show" class="hidden flex-wrap -mx-3 mb-6">
+          <div class="w-full px-3">
+            <label
+              class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+              Bkash/Nagad Transaction ID
+            </label>
+            <input
+              class="appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              id="tr_id"
+              type="text"
+              placeholder="Reference"
+              required />
+          </div>
+        </div>
+        <!-- Bkash/Nagad_tr_id -->
+        <button
+          class="mx-auto flex items-center gap-2 px-6 py-3 text-sm font-bold text-center bg-blue-500 text-white uppercase align-middle transition-all rounded-sm select-none disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none"
+          type="submit">
+          Confirm
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            class="w-5 h-5">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"></path>
+          </svg>
+        </button>
       </form>
-      </div>
     </section>
     <!-- Form Section -->
     <!-- Contact Section -->
-    <section class="flex flex-col justify-between items-center my-4">
-      <h1 class="text-center text-lg text-slate-800">
-        Facing Problem? <br />
-        <br />
+    <section class="flex flex-col justify-between items-center my-2 gap-1">
+      <h1 class="text-center text-lg text-slate-800">Facing Problem?</h1>
+      <div class="flex flex-wrap flex-row justify-evenly items-center mb-6">
+        <a href="tel:+8801981824807" target="_blank">
+          <i
+            class="fa-solid fa-phone text-slate-800 text-[20px] mx-2 cursor-pointer"
+            ><span class="text-xs">1</span></i
+          ></a
+        >
+        <a href="tel:+8801740140581" target="_blank">
+          <i
+            class="fa-solid fa-phone text-slate-800 text-[20px] mx-2 cursor-pointer"
+            ><span class="text-xs">2</span></i
+          ></a
+        >
         <a href="tel:+8801885600943" target="_blank">
           <i
-            class="fa-brands fa-whatsapp text-green-600 text-2xl mx-2 cursor-pointer"></i
+            class="fa-brands fa-whatsapp text-slate-800 text-2xl mx-2 cursor-pointer"></i
         ></a>
         <a href="mailto:remainn.52@gmail.com">
           <i
-            class="fa-solid fa-envelope text-red-400 text-2xl mx-2 cursor-pointer"></i
+            class="fa-solid fa-envelope text-slate-800 text-2xl mx-2 cursor-pointer"></i
         ></a>
         <a href="https://www.facebook.com/remain52" target="_blank"
           ><i
-            class="fa-brands fa-facebook text-sky-700 text-2xl mx-2 cursor-pointer"></i
+            class="fa-brands fa-facebook text-slate-800 text-2xl mx-2 cursor-pointer"></i
         ></a>
-      </h1>
+      </div>
     </section>
     <!-- Contact Section -->
     <footer
       class="flex flex-col lg:flex-row justify-between items-center w-full lg:px-36 bg-slate-800 py-8 gap-4 lg:gap-0">
-      <p class="text-center lg:text-left lg:text-sm text-white font-medium mb-3">
+      <p
+        class="text-center lg:text-left lg:text-sm text-white font-medium mb-3">
         Organized By
         <span class="text-2xl text-white font-bold"
           >Remain <span class="text-[30px] text-blue-600 impo">52</span></span
-        > <br>
+        >
+        <br />
         All Students of Intake 52 <br />
       </p>
       <p class="text-center lg:text-right lg:text-base text-white font-medium">
@@ -112,5 +245,6 @@
       </p>
     </footer>
     <script src="./app.js"></script>
+    <script src="payment_mng.js"></script>
   </body>
 </html>
