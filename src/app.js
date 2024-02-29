@@ -37,7 +37,7 @@ payment_type.addEventListener("change", () => {
 });
 ///----------------Payment Method Change------------
 
-info_form.addEventListener("submit", function (event) {
+info_form.addEventListener("submit", (event) => {
   event.preventDefault();
   Value_Assign();
   let data_obj = {
@@ -52,7 +52,6 @@ info_form.addEventListener("submit", function (event) {
     TransactionID: Transaction_id,
     Reference: reference,
   };
-
   console.log(data_obj);
   info_form.reset();
   Cash_Clean();
@@ -69,7 +68,6 @@ info_form.addEventListener("submit", function (event) {
   setTimeout(() => {
     alrt_sc.classList.add("hidden");
     alrt_sc.classList.remove("flex");
-    window.close();
   }, 5000);
 });
 
