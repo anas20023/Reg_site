@@ -69,6 +69,7 @@ info_form.addEventListener("submit", function (event) {
   setTimeout(() => {
     alrt_sc.classList.add("hidden");
     alrt_sc.classList.remove("flex");
+    window.close();
   }, 5000);
 });
 
