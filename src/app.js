@@ -16,7 +16,7 @@ const payment_type = document.querySelector("#payment-method");
 const cash_payment = document.querySelector("#ref_div_show");
 const online_payment = document.querySelector("#tr_id_div_show");
 const bkash = document.querySelector("#bksh_nm_div_show");
-const nagad = document.querySelector("#Nagad_nmbr_div");
+const nagad = document.querySelector("#Nagad_nmbr_div_show");
 //------------------------------------------------------------
 
 ///----------------Payment Method Change------------
@@ -68,6 +68,7 @@ info_form.addEventListener("submit", (event) => {
   setTimeout(() => {
     alrt_sc.classList.add("hidden");
     alrt_sc.classList.remove("flex");
+    location.href = "./index.html";
   }, 5000);
 });
 
