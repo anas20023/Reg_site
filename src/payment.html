@@ -17,11 +17,7 @@
     <link rel="stylesheet" href="./output.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body
-    class="font-[poppins]"
-    onLoad="noBack();"
-    onpageshow="if (event.persisted) noBack();"
-    onUnload="">
+  <body class="font-[poppins]">
     <!-- Navigation Bar Section -->
     <section
       class="flex flex-row justify-center items-center h-20 w-4/5 max-w-7xl mx-auto">
@@ -30,214 +26,257 @@
           Remain <span class="text-[30px] text-blue-600">52</span>
         </h2>
         <h4 class="text-base font-semibold text-slate-800">
-          <span class="hidden lg:inline-block">Bkash/Nagad :</span>01722222222
+          <span class="hidden lg:inline-block">Bkash/Nagad :</span>01740140581
         </h4>
       </nav>
     </section>
     <!-- Navigation Bar Section -->
-
     <!-- Form Section -->
-    <section class="h-[120vh] lg:h-screen w-4/5 max-w-7xl mx-auto mt-10">
+    <section class="h-[180vh] lg:h-[140vh] w-4/5 max-w-7xl mx-auto mt-10">
       <h1
         class="text-center text-2xl lg:text-4xl text-slate-800 font-semibold my-4">
         Intra-Intake Programming Contest
       </h1>
       <p
+        id="form_name"
         class="text-center text-base lg:text-lg text-slate-800 font-medium mt-6">
-        Proceed to Payment
+        Registration Form
       </p>
-      <div
-        class="w-full max-w-lg mx-auto my-20"
-        id="paymentForm"
-        name="paymentForm">
+      <form class="w-full max-w-lg mx-auto my-20 lg:mt-10 lg:mb-20" id="info">
+        <!-- Name -->
         <div class="flex flex-wrap -mx-3 mb-6">
           <div class="w-full px-3 mb-6 md:mb-0">
             <label
               class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              for="grid-first-name">
-              Select Payment Method
-            </label>
+              for="name"
+              >Full Name</label
+            >
+            <input
+              class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+              id="name"
+              type="text"
+              placeholder="Full Name"
+              autocomplete="on"
+              name="name"
+              required />
+          </div>
+        </div>
+        <!-- Name -->
+
+        <!-- Email -->
+        <div class="flex flex-wrap -mx-3 mb-6">
+          <div class="w-full px-3">
+            <label
+              class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+              for="email"
+              >Email</label
+            >
+            <input
+              class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              id="email"
+              type="email"
+              placeholder="Email"
+              name="email"
+              autocomplete="on"
+              required />
+          </div>
+        </div>
+        <!-- Email -->
+
+        <!-- Phone -->
+        <div class="flex flex-wrap -mx-3 mb-6">
+          <div class="w-full px-3">
+            <label
+              class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+              for="phn_nmbr"
+              >Phone Number</label
+            >
+            <input
+              class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              id="phn_nmbr"
+              type="text"
+              placeholder="Phone Number"
+              name="phone"
+              autocomplete="on"
+              required />
+          </div>
+        </div>
+        <!-- Phone -->
+
+        <!-- Student ID -->
+        <div class="flex flex-wrap -mx-3 mb-6">
+          <div class="w-full px-3">
+            <label
+              class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+              for="st_id"
+              >Student ID</label
+            >
+            <input
+              class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              id="st_id"
+              type="text"
+              name="student_id"
+              placeholder="Student ID"
+              required />
+          </div>
+        </div>
+        <!-- Student ID -->
+
+        <!-- Section -->
+        <div class="flex flex-wrap -mx-3 mb-6">
+          <div class="w-full px-3">
+            <label
+              class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+              for="st_sec"
+              >Section</label
+            >
+            <input
+              class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              id="st_sec"
+              type="text"
+              placeholder="Section"
+              required />
+          </div>
+        </div>
+        <!-- Section -->
+        <!-- Select Payment Method -->
+        <div class="flex flex-wrap -mx-3 mb-6">
+          <div class="w-full px-3 mb-6 md:mb-0">
+            <label
+              class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+              for="payment-method"
+              >Select Payment Method</label
+            >
             <select
               class="appearance-none block w-full bg-gray-100 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
               id="payment-method"
-              type="text"
               required
-              data-te-select-init
-              data-te-select-clear-button="true"
               title="Select Payment Method">
-              <option class="optn_picker" value="0" selected>
-                Select Payment Method
-              </option>
-              <option value="1">Cash</option>
-              <option value="2">Bkash</option>
-              <option value="3">Nagad</option>
+              <option value="" hidden>Select Payment Method</option>
+              <option value="Cash">Cash</option>
+              <option value="Bkash">Bkash</option>
+              <option value="Nagad">Nagad</option>
             </select>
           </div>
         </div>
-        <!-- Ref_name -->
+        <!-- Select Payment Method -->
+        <!-- Reference -->
         <div id="ref_div_show" class="hidden flex-wrap -mx-3 mb-6">
           <div class="w-full px-3">
             <label
-              class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
-              Reference
-            </label>
+              class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+              for="ref_name"
+              >Reference</label
+            >
             <input
               class="appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="ref_name"
               type="text"
-              placeholder="Reference"
-              required />
+              placeholder="Reference" />
           </div>
         </div>
-        <!-- Ref_name -->
-        <!-- Bkash_nmbr -->
+        <!-- Reference -->
+        <!-- Bkash Number -->
         <div id="bksh_nm_div_show" class="hidden flex-wrap -mx-3 mb-6">
           <div class="w-full px-3">
             <label
-              class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
-              Bkash Number
-            </label>
+              class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+              for="bksh_nmr"
+              >Bkash Number</label
+            >
             <input
               class="appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="bksh_nmr"
               type="text"
-              placeholder="Bkash Number"
-              required />
+              placeholder="Bkash Number" />
           </div>
         </div>
-        <!-- Bkash_nmbr -->
-        <!-- Nagad_nmbr -->
+        <!-- Bkash Number -->
+        <!-- Nagad Number -->
         <div id="Nagad_nmbr_div" class="hidden flex-wrap -mx-3 mb-6">
           <div class="w-full px-3">
             <label
-              class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
-              Nagad Number
-            </label>
+              class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+              for="Nagad_number"
+              >Nagad Number</label
+            >
             <input
               class="appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="Nagad_number"
               type="text"
-              placeholder="Nagad Number"
-              required />
+              placeholder="Nagad Number" />
           </div>
         </div>
-        <!-- Nagad_nmbr -->
-        <!-- Bkash/Nagad_tr_id -->
+        <!-- Nagad Number -->
+        <!-- Bkash/Nagad Transaction ID -->
         <div id="tr_id_div_show" class="hidden flex-wrap -mx-3 mb-6">
           <div class="w-full px-3">
             <label
-              class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
-              Bkash/Nagad Transaction ID
-            </label>
+              class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+              for="tr_id"
+              >Bkash/Nagad Transaction ID</label
+            >
             <input
               class="appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="tr_id"
               type="text"
-              placeholder="Reference"
-              required />
+              placeholder="Transaction ID" />
           </div>
         </div>
-        <!-- Bkash/Nagad_tr_id -->
+        <!-- Bkash/Nagad Transaction ID -->
+
+        <!-- Next Button -->
         <button
           class="mx-auto flex items-center gap-2 px-6 py-3 text-sm font-bold text-center bg-blue-500 text-white uppercase align-middle transition-all rounded-sm select-none disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none"
-          type="button"
-          id="confirm_btn">
-          Confirm
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="2"
-            stroke="currentColor"
-            class="w-5 h-5">
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"></path>
-          </svg>
+          type="submit">
+          Confirm Payment
         </button>
-      </div>
+        <!-- Next Button -->
+      </form>
       <div
-        id="alert-to-sent-mail"
-        class="hidden px-11 mt-20 mb-5 lg:px-[150px] py-4 text-green-800 border-t border-b border-green-300 bg-green-50"
+        id="success_alt"
+        class="bg-green-100 border-t fullS_width border-b hidden flex-col border-green-500 text-green-700 px-11 lg:px-[150px] py-3"
         role="alert">
-        <div class="flex items-center">
-          <i class="fa-solid fa-paper-plane text-2xl mr-3"></i>
-          <span class="sr-only">Info</span>
-          <h3 class="text-lg font-medium">You will get an Email Shortly</h3>
-        </div>
-        <div class="mt-2 mb-4 text-sm">
-          Please wait a while.
-          <span class="font-bold">We will confirm your Registration Soon.</span>
-          For more details about
-          <span class="font-bold"
-            >IIPC-52 Contest, Visit Our Facebook Page.</span
-          >
-        </div>
-        <div class="flex">
-          <button
-            type="button"
-            onclick="window.open('https://www.facebook.com/remain52', '_blank')"
-            class="text-white bg-green-800 hover:bg-green-900 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-xs px-3 py-1.5 me-2 text-center inline-flex items-center">
-            <svg
-              class="me-2 h-3 w-3"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
-              viewBox="0 0 20 14">
-              <path
-                d="M10 0C4.612 0 0 5.336 0 7c0 1.742 3.546 7 10 7 6.454 0 10-5.258 10-7 0-1.664-4.612-7-10-7Zm0 10a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z" />
-            </svg>
-            Visit Page
-          </button>
-          <button
-            type="button"
-            onclick="document.getElementById('alert-to-sent-mail').classList.add('hidden')"
-            class="text-green-800 bg-transparent border border-green-800 hover:bg-green-900 hover:text-white focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-xs px-3 py-1.5 text-center"
-            data-dismiss-target="#alert-additional-content-3"
-            aria-label="Close">
-            Exit
-          </button>
-        </div>
+        <p class="font-bold">Informations Recevied Successfully</p>
+        <p class="text-sm">Complete Payment for Confirmation !.</p>
       </div>
-      <!-- Contact Section -->
-      <section
-        id="contact_section"
-        class="hidden flex-col justify-between items-center my-2 gap-1">
-        <h1 class="text-center text-lg text-slate-800">Facing Problem?</h1>
-        <div class="flex flex-wrap flex-row justify-evenly items-center mb-6">
-          <a href="tel:+8801981824807" target="_blank">
-            <i
-              class="fa-solid fa-phone text-slate-800 text-[20px] mx-2 cursor-pointer"
-              ><span class="text-xs">1</span></i
-            ></a
-          >
-          <a href="tel:+8801740140581" target="_blank">
-            <i
-              class="fa-solid fa-phone text-slate-800 text-[20px] mx-2 cursor-pointer"
-              ><span class="text-xs">2</span></i
-            ></a
-          >
-          <a href="tel:+8801885600943" target="_blank">
-            <i
-              class="fa-brands fa-whatsapp text-slate-800 text-2xl mx-2 cursor-pointer"></i
-          ></a>
-          <a href="mailto:remainn.52@gmail.com">
-            <i
-              class="fa-solid fa-envelope text-slate-800 text-2xl mx-2 cursor-pointer"></i
-          ></a>
-          <a href="https://www.facebook.com/remain52" target="_blank"
-            ><i
-              class="fa-brands fa-facebook text-slate-800 text-2xl mx-2 cursor-pointer"></i
-          ></a>
-        </div>
-      </section>
-      <!-- Contact Section -->
     </section>
     <!-- Form Section -->
 
+    <!-- Contact Section -->
+    <section class="flex flex-col justify-between items-center my-2 gap-1">
+      <h1 class="text-center text-lg text-slate-800">Facing Problem?</h1>
+      <div class="flex flex-wrap flex-row justify-evenly items-center mb-6">
+        <a href="tel:+8801981824807" target="_blank">
+          <i
+            class="fa-solid fa-phone text-slate-800 text-[20px] mx-2 cursor-pointer"
+            ><span class="text-xs">1</span></i
+          >
+        </a>
+        <a href="tel:+8801740140581" target="_blank">
+          <i
+            class="fa-solid fa-phone text-slate-800 text-[20px] mx-2 cursor-pointer"
+            ><span class="text-xs">2</span></i
+          >
+        </a>
+        <a href="tel:+8801885600943" target="_blank">
+          <i
+            class="fa-brands fa-whatsapp text-slate-800 text-2xl mx-2 cursor-pointer"></i>
+        </a>
+        <a href="mailto:remainn.52@gmail.com">
+          <i
+            class="fa-solid fa-envelope text-slate-800 text-2xl mx-2 cursor-pointer"></i>
+        </a>
+        <a href="https://www.facebook.com/remain52" target="_blank">
+          <i
+            class="fa-brands fa-facebook text-slate-800 text-2xl mx-2 cursor-pointer"></i>
+        </a>
+      </div>
+    </section>
+    <!-- Contact Section -->
+
     <footer
-      class="flex flex-col lg:flex-row justify-between items-center fixed bottom-0 w-full lg:px-36 bg-slate-800 py-8 gap-4 lg:gap-0">
+      class="flex flex-col lg:flex-row justify-between items-center w-full lg:px-36 bg-slate-800 py-8 gap-4 lg:gap-0">
       <p
         class="text-center lg:text-left lg:text-sm text-white font-medium mb-3">
         Organized By
@@ -253,6 +292,5 @@
       </p>
     </footer>
     <script src="./app.js"></script>
-    <script src="./payment_mng.js"></script>
   </body>
 </html>
